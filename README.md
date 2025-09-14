@@ -1,81 +1,79 @@
-# dnd_5_monster.codex
+# DnD 5e Monster Codex
 
-Link: https://dnd-5-monster-codex-fsuu6cic3-soustern.vercel.app/
+A mobile-first web application that allows users to search and visualize information about monsters from the Dungeons & Dragons 5th Edition API. The interface is designed for clarity and a streamlined user experience, presenting complex data in an organized and aesthetically pleasing manner.
 
-## Introduction
+**[Live Demo](https://dnd-5-monster-codex-fsuu6cic3-soustern.vercel.app/)**
 
-This is a small web app that lets you search and visualise information about all Dungeons and Dragons monsters present at the following database: http://www.dnd5eapi.co/
+---
 
-The data brought back from the API is presented on the front-end in an orderly and aesthetically pleasing manner. While designing the app, a process that had mobile as the main focus, a lot of care has been taken to make sure a hierarchy of colors and sizes was well defined and in place.
+## Key Features
 
-Fluidity of content and clarity of information were achieved through the whole project.
+*   **Dynamic Search:** Instantly search the complete D&D 5e monster database.
+*   **Detailed Views:** Clean, readable cards present all monster stats, abilities, and lore.
+*   **Responsive Design:** A mobile-first approach ensures a seamless experience on any device.
 
-## Technologies Used
+## Tech Stack
 
-### NPM
+*   **Frontend:** JavaScript (ES6+), SASS (7-1 pattern), HTML5 (BEM methodology)
+*   **Backend:** Python with Flask (for routing and serving the application)
+*   **Build Tools:** NPM (for package management and custom scripts)
+*   **Deployment:** Vercel
 
-This package manager was the foundation of the project, being responsible for setting up everything. Two custom scripts were made to quickly get a flask server (debug mode on) running and compile a main SASS file into a main CSS file.
+## Technical Highlights
 
-### HTML
+This project was an opportunity to implement and deepen my understanding of several key web development concepts:
 
-A good deal of focus was put into making the markup semantic, and the principles of BEM (Block, Element, Modifier) were applied to the class names. 
-Either way, there is massive room for improvement and the accessibility side of the app may be poor at best.
+*   **JavaScript:** Responsible for asynchronous API communication (`fetch`), dynamic DOM manipulation to render data, and user input handling.
+*   **SASS:** Leveraged advanced features like variables, mixins, and `extends`, organized using the 7-1 architecture pattern for scalable and maintainable CSS.
+*   **HTML:** Written with a focus on semantic markup and structured with BEM naming conventions for clear, reusable components.
+*   **Flask:** Used as a lightweight micro-framework to handle routing and serve the front-end, enabling a simple and fast development environment.
 
-### SASS
+## Getting Started
 
-Many of the tools that SASS brings to the table where leveraged, putting to good use concatenation, extends, mixins and, mainly, variables.
-As for folder structure, the 7 to 1 model was used (seven folders worth of files being concentrated into one).
+To get a local copy up and running, follow these simple steps.
 
-### JavaScript
+### Prerequisites
 
-This language was used extensively, being responsible for connecting to the API, manipulating the DOM, formatting user input and preventing default behavior when necessary. Although handy and performant, the structure of the code could be much more organised and fragmented in multiple components.
+*   npm
+    ```sh
+    npm install npm@latest -g
+    ```
+*   Python 3.x and Pip
 
-### Flask
+### Installation
 
-Being a micro-framework, flask presented itself as an amazing tool for quickly setting up the routing structure. It also worked well as a personal development environment that was very simple get up and running.
-But, in hindsight, I can see how this project would have worked without flask, making it not necessary.
+1.  **Clone the repository:**
+    ```sh
+    git clone https://github.com/soustern/dnd_5_monster.codex.git](https://github.com/soustern/DND5-Monster-Codex.git
+    ```
+2.  **Navigate to the project directory:**
+    ```sh
+    cd DND5-Monster-Codex
+    ```
+3.  **Install NPM packages:**
+    ```sh
+    npm install
+    ```
+4.  **Install Flask:**
+    ```sh
+    pip3 install Flask
+    ```
+5.  **Run the application:**
+    *   Compile SASS and start the Flask server with the custom NPM scripts.
+    ```sh
+    # In one terminal, compile SASS and watch for changes
+    npm run sass
+    
+    # In another terminal, start the development server
+    npm run dev
+    ```
 
-## Resources
+## Challenges & Learnings
 
-### Stack Overflow
+During deployment to Vercel, I encountered HTTP 500 errors when loading large image assets. I diagnosed this as a performance bottleneck and resolved the issue by implementing an image compression strategy. This not only fixed the deployment error but also significantly improved the application's load times and overall performance.
 
-Stack Overflow was very useful for finding solutions about very specific bugs. Odds were someone had already asked about that before.
+## Future Improvements
 
-### Youtube
-
-The following channels were consulted:
-
-- https://www.youtube.com/@naztronaut
-
-- https://www.youtube.com/@CodingGarden
-
-### Courses
-
-The following courses were consulted: 
-
-- https://www.udemy.com/course/advanced-css-and-sass/
-
-- https://pll.harvard.edu/course/cs50-introduction-computer-science?delta=0
-
-## Usage and reproduction 
-
-- First off, the package.json file has all the necessary tools for working with the project listed, so a simple "npm install" on the root folder sets up 50% of the development dependencies. All necessary scripts are listed in this file and need to be executed for everything to compile and work
-
-- Python must be installed on the computer and flask has to be added via a "pip3" command.
-
-- As for virtual environments, the default Ubuntu one was used, being added and activated to and from the root folder.
-
-- Elint and Emmet for SASS, HTML, JavaScript, Python and Flask where all added via VSCode extensions.
-
-- Almost every line of SASS and JS is commented, so all the processes and lines of thought should be clear.
-
-## Deployment
-
-Deployment of the app was made entirely via Vercel CLI
-
-### Problems
-
-During the proccess of deployment, some images returned a http error of 500 when trying to load.
-What solved this was compacting the images to a smaller size.
-
-
+*   **Component-Based Refactoring:** Refactor the JavaScript code into modular components to improve organization and reusability.
+*   **Accessibility (A11y) Enhancements:** Conduct an audit and implement ARIA attributes and other best practices to improve accessibility for screen readers and keyboard navigation.
+*   **Client-Side Routing:** Transition from the Flask-based routing to a client-side solution to create a true Single Page Application (SPA) experience.
